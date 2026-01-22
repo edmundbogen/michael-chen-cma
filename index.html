@@ -1050,6 +1050,402 @@
             font-size: 12px;
             opacity: 0.8;
         }
+
+        /* Active Listings Table */
+        .listings-table-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .listings-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .listings-table th {
+            background: var(--navy);
+            color: var(--white);
+            padding: 16px 12px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .listings-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            vertical-align: middle;
+        }
+
+        .listings-table tr:hover {
+            background: rgba(0, 168, 225, 0.1);
+        }
+
+        .listings-table tr.chen-comparable {
+            background: rgba(0, 168, 225, 0.15);
+            border-left: 4px solid var(--bright-blue);
+        }
+
+        .listings-table tr.chen-comparable td:first-child {
+            position: relative;
+        }
+
+        .listings-table .price-cell {
+            font-weight: 600;
+            color: var(--bright-blue);
+        }
+
+        .listings-table .psf-cell {
+            font-weight: 500;
+        }
+
+        .waterfront-badge {
+            display: inline-block;
+            background: var(--bright-blue);
+            color: var(--white);
+            padding: 2px 8px;
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: 2px;
+        }
+
+        .no-waterfront {
+            background: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .market-gap-callout {
+            max-width: 800px;
+            margin: 40px auto 0;
+            background: rgba(0, 168, 225, 0.15);
+            border: 2px solid var(--bright-blue);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .market-gap-callout h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bright-blue);
+            margin-bottom: 16px;
+        }
+
+        .market-gap-callout .gap-range {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .market-gap-callout p {
+            font-size: 15px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* Market Position Calculator */
+        .position-calculator {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .position-calc-header {
+            background: linear-gradient(135deg, var(--navy), #0d2840);
+            color: var(--white);
+            padding: 32px 40px;
+            text-align: center;
+        }
+
+        .position-calc-header h3 {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .position-calc-header p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .position-calc-body {
+            padding: 40px;
+        }
+
+        .position-slider-group {
+            margin-bottom: 32px;
+        }
+
+        .position-slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .position-slider-label .label-text {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--navy);
+        }
+
+        .position-slider-label .label-value {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--bright-blue);
+        }
+
+        .position-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: linear-gradient(to right, #e0e0e0 0%, var(--bright-blue) 50%, var(--navy) 100%);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .position-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: var(--navy);
+            border: 3px solid var(--bright-blue);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .position-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: var(--navy);
+            border: 3px solid var(--bright-blue);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Market Position Visualization */
+        .market-ladder {
+            margin: 40px 0;
+            padding: 32px;
+            background: var(--light-gray);
+            border-radius: 4px;
+        }
+
+        .market-ladder h4 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .ladder-track {
+            position: relative;
+            height: 60px;
+            background: linear-gradient(to right, #dc3545 0%, #ffc107 25%, #28a745 50%, var(--bright-blue) 75%, var(--navy) 100%);
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .ladder-marker {
+            position: absolute;
+            top: -8px;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .ladder-marker .marker-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--white);
+            border: 3px solid var(--navy);
+            border-radius: 50%;
+            margin: 0 auto 4px;
+        }
+
+        .ladder-marker .marker-price {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            white-space: nowrap;
+        }
+
+        .ladder-marker .marker-address {
+            font-size: 9px;
+            color: var(--dark-gray);
+            opacity: 0.7;
+            white-space: nowrap;
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chen-position {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .chen-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--bright-blue);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: left 0.3s ease;
+        }
+
+        .chen-label {
+            position: absolute;
+            top: 48px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy);
+            color: var(--white);
+            padding: 8px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+            border-radius: 2px;
+        }
+
+        .chen-label::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid var(--navy);
+        }
+
+        /* Position Results Grid */
+        .position-results {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .position-result-card {
+            background: var(--light-gray);
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .position-result-card.highlight {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .position-result-card .result-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .position-result-card .result-value {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .position-result-card.highlight .result-value {
+            color: var(--bright-blue);
+        }
+
+        .position-result-card .result-sub {
+            font-size: 11px;
+            margin-top: 4px;
+            opacity: 0.7;
+        }
+
+        /* Competing Properties List */
+        .competing-properties {
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--light-gray);
+            border-radius: 4px;
+        }
+
+        .competing-properties h4 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .competing-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .competing-item {
+            background: var(--white);
+            padding: 12px 16px;
+            border-radius: 4px;
+            border-left: 3px solid var(--bright-blue);
+            font-size: 13px;
+        }
+
+        .competing-item .comp-addr {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .competing-item .comp-price {
+            color: var(--bright-blue);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .position-results {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .listings-table {
+                font-size: 12px;
+            }
+
+            .listings-table th,
+            .listings-table td {
+                padding: 12px 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1114,10 +1510,6 @@
                 <div class="value">70 ft</div>
                 <div class="label">Water Frontage</div>
             </div>
-            <div class="property-stat">
-                <div class="value">2001</div>
-                <div class="label">Year Built</div>
-            </div>
         </div>
 
         <div class="baseline-card">
@@ -1140,19 +1532,19 @@
                 <div class="scenario-header minor">
                     <div class="scenario-badge">Recommended</div>
                     <div class="scenario-title">Minor Renovations</div>
-                    <div class="scenario-cost">$200,000</div>
+                    <div class="scenario-cost">$250,000</div>
                 </div>
                 <div class="scenario-body">
                     <div class="scenario-includes">
                         <h4>Scope of Work</h4>
                         <ul>
                             <li>Refresh paint throughout</li>
-                            <li>Refinish cabinets</li>
-                            <li>Replace countertops</li>
+                            <li>Refinish cabinets & countertops</li>
                             <li>Update fixtures & lighting</li>
                             <li>Refinish floors in high-traffic areas</li>
-                            <li>Replace garage door & entry door</li>
-                            <li>Minor landscaping refresh</li>
+                            <li>Replace garage doors ($25-45K)</li>
+                            <li>Replace entry door ($10-25K)</li>
+                            <li>Landscaping refresh ($30-50K)</li>
                         </ul>
                     </div>
                     <div class="scenario-results">
@@ -1162,28 +1554,28 @@
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Renovation Cost</span>
-                            <span class="value">$200,000</span>
+                            <span class="value">$250,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Total Investment</span>
-                            <span class="value">$6,885,000</span>
+                            <span class="value">$6,935,000</span>
                         </div>
                         <div class="scenario-result-row">
-                            <span class="label">Projected Sale</span>
-                            <span class="value">$7,370,000</span>
+                            <span class="label">Projected Sale (~$850/SF)</span>
+                            <span class="value">$7,275,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Closing Costs (7.5%)</span>
-                            <span class="value">$552,750</span>
+                            <span class="value">$545,625</span>
                         </div>
                         <div class="scenario-result-row total">
                             <span class="label">Net Proceeds</span>
-                            <span class="value warning">-$67,750</span>
+                            <span class="value warning">-$205,625</span>
                         </div>
                     </div>
                     <div class="scenario-risk low">
                         <strong>Low Risk</strong>
-                        Best cost-benefit ratio. Helps the home show well and minimises buyer objections. Recoups most costs but doesn't generate significant profit.
+                        Best cost-benefit ratio. Comparable to 775 Oriole Circle ($777/SF). Helps home show well but likely results in modest loss after closing costs.
                     </div>
                 </div>
             </div>
@@ -1193,20 +1585,18 @@
                 <div class="scenario-header midrange">
                     <div class="scenario-badge">Moderate</div>
                     <div class="scenario-title">Mid-Range Renovation</div>
-                    <div class="scenario-cost">$830,000</div>
+                    <div class="scenario-cost">$950,000</div>
                 </div>
                 <div class="scenario-body">
                     <div class="scenario-includes">
                         <h4>Scope of Work</h4>
                         <ul>
-                            <li>Kitchen remodel (no plumbing moves)</li>
-                            <li>Update all 8.5 bathrooms</li>
-                            <li>Replace flooring throughout</li>
-                            <li>Repaint interior & exterior</li>
-                            <li>New energy-efficient windows</li>
-                            <li>New HVAC system</li>
-                            <li>New roof (~$80K)</li>
-                            <li>Improved landscaping & lighting</li>
+                            <li>Kitchen remodel ($50-100K)</li>
+                            <li>Update all 8.5 bathrooms ($212-425K)</li>
+                            <li>Replace flooring throughout ($85-215K)</li>
+                            <li>New roof ($100-175K)</li>
+                            <li>New HVAC system ($35-65K)</li>
+                            <li>Landscaping & paint ($30-75K)</li>
                         </ul>
                     </div>
                     <div class="scenario-results">
@@ -1216,28 +1606,28 @@
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Renovation Cost</span>
-                            <span class="value">$830,000</span>
+                            <span class="value">$950,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Total Investment</span>
-                            <span class="value">$7,515,000</span>
+                            <span class="value">$7,635,000</span>
                         </div>
                         <div class="scenario-result-row">
-                            <span class="label">Projected Sale</span>
-                            <span class="value">$7,790,000</span>
+                            <span class="label">Projected Sale (~$975/SF)</span>
+                            <span class="value">$8,350,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Closing Costs (7.5%)</span>
-                            <span class="value">$584,250</span>
+                            <span class="value">$626,250</span>
                         </div>
                         <div class="scenario-result-row total">
                             <span class="label">Net Proceeds</span>
-                            <span class="value warning">-$309,250</span>
+                            <span class="value positive">$88,750</span>
                         </div>
                     </div>
                     <div class="scenario-risk medium">
                         <strong>Medium Risk</strong>
-                        Improves marketability and reduces inspection issues. However, typical 50-80% ROI means most returns are absorbed by closing costs.
+                        Positions between 775 Oriole ($777/SF) and 4698 Sanctuary Lane listing ($1,452/SF). Modest profit possible if market supports $975+/SF.
                     </div>
                 </div>
             </div>
@@ -1245,21 +1635,22 @@
             <!-- Major Luxury Renovation -->
             <div class="scenario-card">
                 <div class="scenario-header major">
-                    <div class="scenario-badge">High Risk</div>
+                    <div class="scenario-badge">High Risk / High Reward</div>
                     <div class="scenario-title">Major Luxury Renovation</div>
-                    <div class="scenario-cost">$2,020,000</div>
+                    <div class="scenario-cost">$2,200,000</div>
                 </div>
                 <div class="scenario-body">
                     <div class="scenario-includes">
                         <h4>Scope of Work</h4>
                         <ul>
-                            <li>Complete interior modernisation</li>
-                            <li>New layouts, relocate kitchen</li>
-                            <li>Luxury finishes throughout</li>
-                            <li>Replace all mechanical systems</li>
-                            <li>500 sq ft addition</li>
-                            <li>New outdoor kitchen & deck</li>
-                            <li>Smart home technology</li>
+                            <li>Complete interior modernization</li>
+                            <li>High-end kitchen ($200K+)</li>
+                            <li>All bathrooms updated ($400K+)</li>
+                            <li>New tile roof ($150K)</li>
+                            <li>Impact windows throughout ($175K)</li>
+                            <li>Premium flooring ($200K)</li>
+                            <li>New HVAC & smart home ($100K)</li>
+                            <li>Pool/outdoor living ($150K)</li>
                         </ul>
                     </div>
                     <div class="scenario-results">
@@ -1269,28 +1660,28 @@
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Renovation Cost</span>
-                            <span class="value">$2,020,000</span>
+                            <span class="value">$2,200,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Total Investment</span>
-                            <span class="value">$8,705,000</span>
+                            <span class="value">$8,885,000</span>
                         </div>
                         <div class="scenario-result-row">
-                            <span class="label">Target Sale ($10M)</span>
-                            <span class="value">$10,000,000</span>
+                            <span class="label">Projected Sale (~$1,225/SF)</span>
+                            <span class="value">$10,500,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Closing Costs (7.5%)</span>
-                            <span class="value">$750,000</span>
+                            <span class="value">$787,500</span>
                         </div>
                         <div class="scenario-result-row total">
-                            <span class="label">Net Profit (at $10M)</span>
-                            <span class="value positive">$545,000</span>
+                            <span class="label">Net Profit</span>
+                            <span class="value positive">$827,500</span>
                         </div>
                     </div>
-                    <div class="scenario-risk">
-                        <strong>High Risk</strong>
-                        Must sell for $10M+ to profit. If market supports only $9M, net gain drops to ~$20K. Requires buyer willing to pay new-construction prices for a renovated 2001 structure.
+                    <div class="scenario-risk medium">
+                        <strong>Calculated Risk</strong>
+                        Fills the $8M-$12M market gap where there's NO competition. Competes favorably with 4698 Sanctuary Lane ($11.95M) - you're larger (8,561 vs 8,230 SF) at a better value. Must execute flawlessly.
                     </div>
                 </div>
             </div>
@@ -1327,26 +1718,26 @@
             </div>
             <div class="calculator-body">
                 <div class="preset-buttons">
-                    <button class="preset-btn" onclick="setPreset('minor')">Minor ($200K)</button>
-                    <button class="preset-btn active" onclick="setPreset('midrange')">Mid-Range ($830K)</button>
-                    <button class="preset-btn" onclick="setPreset('major')">Major ($2.02M)</button>
+                    <button class="preset-btn" onclick="setPreset('minor')">Minor ($250K)</button>
+                    <button class="preset-btn active" onclick="setPreset('midrange')">Mid-Range ($950K)</button>
+                    <button class="preset-btn" onclick="setPreset('major')">Major ($2.2M)</button>
                     <button class="preset-btn" onclick="setPreset('custom')">Custom</button>
                 </div>
 
                 <div class="slider-group">
                     <div class="slider-label">
                         <span>Renovation Budget</span>
-                        <span class="slider-value" id="renovationValue">$830,000</span>
+                        <span class="slider-value" id="renovationValue">$950,000</span>
                     </div>
-                    <input type="range" id="renovation" min="100000" max="2500000" step="10000" value="830000">
+                    <input type="range" id="renovation" min="100000" max="2500000" step="10000" value="950000">
                 </div>
 
                 <div class="slider-group">
                     <div class="slider-label">
                         <span>Target Sale Price</span>
-                        <span class="slider-value" id="salePriceValue">$7,790,000</span>
+                        <span class="slider-value" id="salePriceValue">$8,350,000</span>
                     </div>
-                    <input type="range" id="salePrice" min="7000000" max="14000000" step="10000" value="7790000">
+                    <input type="range" id="salePrice" min="7000000" max="14000000" step="10000" value="8350000">
                 </div>
 
                 <div class="slider-group">
@@ -1490,6 +1881,249 @@
         </div>
     </section>
 
+    <!-- Current Active Listings -->
+    <section id="active-listings" class="section section-dark">
+        <div class="section-header">
+            <h2>Current Active Listings</h2>
+            <div class="accent-bar"></div>
+            <p>10 homes currently on the market in The Sanctuary. Only 10 opportunities in this ultra-exclusive community.</p>
+        </div>
+
+        <div class="listings-table-container">
+            <table class="listings-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Address</th>
+                        <th>List Price</th>
+                        <th>Sq Ft</th>
+                        <th>Bed/Bath</th>
+                        <th>Year</th>
+                        <th>Waterfront</th>
+                        <th>$/SF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>4140 Sanctuary Lane</td>
+                        <td class="price-cell">$3,700,000</td>
+                        <td>5,011</td>
+                        <td>4/5</td>
+                        <td>1981</td>
+                        <td><span class="waterfront-badge no-waterfront">No</span></td>
+                        <td class="psf-cell">$738</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>501 Sandpiper Way</td>
+                        <td class="price-cell">$4,695,000</td>
+                        <td>4,793</td>
+                        <td>4/5+2</td>
+                        <td>1988</td>
+                        <td><span class="waterfront-badge no-waterfront">No</span></td>
+                        <td class="psf-cell">$980</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4700 Sanctuary Lane</td>
+                        <td class="price-cell">$4,699,000</td>
+                        <td>4,725</td>
+                        <td>4/4+1</td>
+                        <td>1982</td>
+                        <td><span class="waterfront-badge">65'</span></td>
+                        <td class="psf-cell">$994</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>4008 Sanctuary Lane</td>
+                        <td class="price-cell">$8,000,000</td>
+                        <td>6,099</td>
+                        <td>5/5+1</td>
+                        <td>1999</td>
+                        <td><span class="waterfront-badge no-waterfront">No</span></td>
+                        <td class="psf-cell">$1,312</td>
+                    </tr>
+                    <tr class="chen-comparable">
+                        <td>5</td>
+                        <td>4698 Sanctuary Lane</td>
+                        <td class="price-cell">$11,950,000</td>
+                        <td>8,230</td>
+                        <td>5/6+1</td>
+                        <td>1989</td>
+                        <td><span class="waterfront-badge">70'</span></td>
+                        <td class="psf-cell">$1,452</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>701 Sanctuary Drive</td>
+                        <td class="price-cell">$16,900,000</td>
+                        <td>7,683</td>
+                        <td>4/5+2</td>
+                        <td>2015</td>
+                        <td><span class="waterfront-badge">106'</span></td>
+                        <td class="psf-cell">$2,200</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>4080 Ibis Point Circle</td>
+                        <td class="price-cell">$21,500,000</td>
+                        <td>8,891</td>
+                        <td>5/8+2</td>
+                        <td>2024</td>
+                        <td><span class="waterfront-badge">170'</span></td>
+                        <td class="psf-cell">$2,418</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>4111 Ibis Point Circle</td>
+                        <td class="price-cell">$22,500,000</td>
+                        <td>9,973</td>
+                        <td>5/7+2</td>
+                        <td>2024</td>
+                        <td><span class="waterfront-badge">173'</span></td>
+                        <td class="psf-cell">$2,256</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>700 Osprey Point Circle</td>
+                        <td class="price-cell">$22,990,000</td>
+                        <td>11,395</td>
+                        <td>7/8+3</td>
+                        <td>2013</td>
+                        <td><span class="waterfront-badge">220'</span></td>
+                        <td class="psf-cell">$2,018</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>799 Sanctuary Drive</td>
+                        <td class="price-cell">$29,500,000</td>
+                        <td>14,094</td>
+                        <td>8/9+3</td>
+                        <td>2002</td>
+                        <td><span class="waterfront-badge">350'</span></td>
+                        <td class="psf-cell">$2,093</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="market-gap-callout">
+            <h3>The Market Opportunity</h3>
+            <div class="gap-range">$8M - $11.95M = No Competition</div>
+            <p>There's a <strong>$4 million gap</strong> in the market between 4008 Sanctuary Lane ($8M) and 4698 Sanctuary Lane ($11.95M). Michael's property at 8,561 SF with 70' waterfront is <strong>larger than 4698 Sanctuary Lane</strong> (8,230 SF) and perfectly positioned to fill this gap with the right renovation. Rising tides raise all ships.</p>
+        </div>
+    </section>
+
+    <!-- Market Position Calculator -->
+    <section id="position-calculator" class="section section-light">
+        <div class="section-header">
+            <h2>Renovation-to-Price Calculator</h2>
+            <div class="accent-bar"></div>
+            <p>See how renovation investment moves your property up the market ladder. The more you invest, the higher you can price.</p>
+        </div>
+
+        <div class="position-calculator">
+            <div class="position-calc-header">
+                <h3>Your Market Position</h3>
+                <p>Slide to see how renovation investment affects your competitive position</p>
+            </div>
+            <div class="position-calc-body">
+                <div class="position-slider-group">
+                    <div class="position-slider-label">
+                        <span class="label-text">Renovation Investment</span>
+                        <span class="label-value" id="positionRenoValue">$500,000</span>
+                    </div>
+                    <input type="range" class="position-slider" id="positionReno" min="0" max="2500000" step="50000" value="500000">
+                </div>
+
+                <div class="market-ladder">
+                    <h4>Where You Compete in The Sanctuary Market</h4>
+                    <div class="ladder-track">
+                        <!-- Market markers -->
+                        <div class="ladder-marker" style="left: 5%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-price">$3.7M</div>
+                            <div class="marker-address">4140 Sanctuary</div>
+                        </div>
+                        <div class="ladder-marker" style="left: 15%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-price">$4.7M</div>
+                            <div class="marker-address">4700 Sanctuary</div>
+                        </div>
+                        <div class="ladder-marker" style="left: 27%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-price">$8M</div>
+                            <div class="marker-address">4008 Sanctuary</div>
+                        </div>
+                        <div class="ladder-marker" style="left: 42%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-price">$11.95M</div>
+                            <div class="marker-address">4698 Sanctuary</div>
+                        </div>
+                        <div class="ladder-marker" style="left: 60%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-price">$16.9M</div>
+                            <div class="marker-address">701 Sanctuary</div>
+                        </div>
+                        <div class="ladder-marker" style="left: 78%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-price">$22M</div>
+                            <div class="marker-address">New Construction</div>
+                        </div>
+                        <div class="ladder-marker" style="left: 95%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-price">$29.5M</div>
+                            <div class="marker-address">799 Sanctuary</div>
+                        </div>
+
+                        <!-- Chen's position marker -->
+                        <div class="chen-position" id="chenPosition" style="left: 30%;">
+                            <div class="chen-marker">MC</div>
+                            <div class="chen-label" id="chenPriceLabel">$8.5M Target</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="position-results">
+                    <div class="position-result-card">
+                        <div class="result-label">Projected $/SF</div>
+                        <div class="result-value" id="projectedPSF">$993</div>
+                        <div class="result-sub">Based on reno level</div>
+                    </div>
+                    <div class="position-result-card">
+                        <div class="result-label">Target Sale Price</div>
+                        <div class="result-value" id="targetSalePrice">$8,500,000</div>
+                        <div class="result-sub">8,561 SF x $/SF</div>
+                    </div>
+                    <div class="position-result-card">
+                        <div class="result-label">Break-Even Price</div>
+                        <div class="result-value" id="breakEvenPrice">$7,768,108</div>
+                        <div class="result-sub">After 7.5% closing</div>
+                    </div>
+                    <div class="position-result-card highlight">
+                        <div class="result-label">Net Profit</div>
+                        <div class="result-value" id="netProfitCalc">$677,392</div>
+                        <div class="result-sub" id="roiCalc">9.5% ROI</div>
+                    </div>
+                </div>
+
+                <div class="competing-properties">
+                    <h4>At This Price Point, You Compete With:</h4>
+                    <div class="competing-list" id="competingList">
+                        <div class="competing-item">
+                            <span class="comp-addr">4008 Sanctuary Lane</span> - <span class="comp-price">$8M</span> (No waterfront, 6,099 SF)
+                        </div>
+                        <div class="competing-item">
+                            <span class="comp-addr">4698 Sanctuary Lane</span> - <span class="comp-price">$11.95M</span> (70' waterfront, 8,230 SF)
+                        </div>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 13px; color: var(--dark-gray);"><strong>Your advantage:</strong> <span id="advantageText">Larger than 4698 at lower price with waterfront access</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Historical Chart -->
     <section class="section section-light">
         <div class="section-header">
@@ -1508,19 +2142,19 @@
         <div class="section-header">
             <h2>Renovation ROI Guide</h2>
             <div class="accent-bar"></div>
-            <p>Research-based ROI data for Florida home improvements. Focus on high-return projects and avoid over-personalisation.</p>
+            <p>2025 pricing data for South Florida luxury home improvements. Costs reflect Palm Beach County rates, which run 30-50% higher than Central Florida.</p>
         </div>
 
         <div class="checklist-container">
             <div class="checklist-category">
                 <h3>Highest ROI Projects (80-200%+)</h3>
 
-                <div class="checklist-item" data-cost="20000">
+                <div class="checklist-item" data-cost="35000">
                     <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
-                        <div class="checklist-title">Garage Door Replacement</div>
-                        <div class="checklist-desc">High-end insulated doors with smart technology</div>
-                        <div class="checklist-cost">Est. Cost: $4,500 - $20,000</div>
+                        <div class="checklist-title">Garage Door Replacement (3-Car)</div>
+                        <div class="checklist-desc">Custom insulated doors with smart technology for luxury estate</div>
+                        <div class="checklist-cost">Est. Cost: $25,000 - $45,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">98-194%</div>
@@ -1528,12 +2162,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="8000">
+                <div class="checklist-item" data-cost="17500">
                     <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">Entry Door Replacement</div>
-                        <div class="checklist-desc">Steel or fiberglass entry door with modern hardware</div>
-                        <div class="checklist-cost">Est. Cost: $2,000 - $8,000</div>
+                        <div class="checklist-desc">Luxury estate-grade entry system with impact glass and hardware</div>
+                        <div class="checklist-cost">Est. Cost: $10,000 - $25,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">100-216%</div>
@@ -1541,12 +2175,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="27500">
+                <div class="checklist-item" data-cost="75000">
                     <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">Minor Kitchen Remodel</div>
-                        <div class="checklist-desc">Reface cabinets, quartz countertops, modern appliances, new fixtures</div>
-                        <div class="checklist-cost">Est. Cost: $20,000 - $40,000</div>
+                        <div class="checklist-desc">Reface cabinets, quartz countertops, updated appliances, new fixtures</div>
+                        <div class="checklist-cost">Est. Cost: $50,000 - $100,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">52-96%</div>
@@ -1558,12 +2192,12 @@
             <div class="checklist-category">
                 <h3>Strong ROI Projects (60-90%)</h3>
 
-                <div class="checklist-item" data-cost="25000">
+                <div class="checklist-item" data-cost="50000">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
-                        <div class="checklist-title">Bathroom Updates (Mid-Range)</div>
+                        <div class="checklist-title">Bathroom Updates (Per Bath)</div>
                         <div class="checklist-desc">Modern fixtures, new tile, frameless glass, updated vanities</div>
-                        <div class="checklist-cost">Est. Cost: $5,000 - $30,000 per bath</div>
+                        <div class="checklist-cost">Est. Cost: $25,000 - $75,000 per bath (8.5 baths = $212K - $637K)</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">57-93%</div>
@@ -1571,12 +2205,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="80000">
+                <div class="checklist-item" data-cost="137500">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
-                        <div class="checklist-title">New Roof (Tile or Metal)</div>
-                        <div class="checklist-desc">Hurricane-rated roofing, essential for insurance approval</div>
-                        <div class="checklist-cost">Est. Cost: $60,000 - $100,000</div>
+                        <div class="checklist-title">New Roof (Tile)</div>
+                        <div class="checklist-desc">Clay or concrete tile, hurricane-rated for 10,500 SF total roof area</div>
+                        <div class="checklist-cost">Est. Cost: $100,000 - $175,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">70-90%</div>
@@ -1584,12 +2218,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="75000">
+                <div class="checklist-item" data-cost="150000">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">Impact Windows (ENERGY STAR)</div>
-                        <div class="checklist-desc">Hurricane-rated impact glass, reduces insurance premiums</div>
-                        <div class="checklist-cost">Est. Cost: $50,000 - $100,000</div>
+                        <div class="checklist-desc">Hurricane-rated impact glass throughout, up to 45% insurance savings</div>
+                        <div class="checklist-cost">Est. Cost: $100,000 - $200,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">70-90%</div>
@@ -1597,12 +2231,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="15000">
+                <div class="checklist-item" data-cost="100000">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
-                        <div class="checklist-title">Deck or Outdoor Living Space</div>
-                        <div class="checklist-desc">Wooden or composite deck, outdoor entertaining area</div>
-                        <div class="checklist-cost">Est. Cost: $15,000 - $60,000</div>
+                        <div class="checklist-title">Outdoor Living / Summer Kitchen</div>
+                        <div class="checklist-desc">Waterfront outdoor entertaining area, built-in grill, covered lanai</div>
+                        <div class="checklist-cost">Est. Cost: $50,000 - $150,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">68-83%</div>
@@ -1614,12 +2248,12 @@
             <div class="checklist-category">
                 <h3>Moderate ROI Projects (50-70%)</h3>
 
-                <div class="checklist-item" data-cost="85000">
+                <div class="checklist-item" data-cost="150000">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">Flooring Throughout</div>
                         <div class="checklist-desc">Luxury porcelain tile, engineered hardwood, or natural stone (8,500 SF)</div>
-                        <div class="checklist-cost">Est. Cost: $5-25/SF = $42,000 - $215,000</div>
+                        <div class="checklist-cost">Est. Cost: $10-25/SF = $85,000 - $215,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">50-70%</div>
@@ -1627,12 +2261,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="25000">
+                <div class="checklist-item" data-cost="50000">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">HVAC Replacement</div>
-                        <div class="checklist-desc">Modern energy-efficient system, smart thermostat integration</div>
-                        <div class="checklist-cost">Est. Cost: $15,000 - $35,000</div>
+                        <div class="checklist-desc">Multi-zone system for 8,500 SF, smart thermostat integration</div>
+                        <div class="checklist-cost">Est. Cost: $35,000 - $65,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">65-100%</div>
@@ -1640,12 +2274,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="10000">
+                <div class="checklist-item" data-cost="52500">
                     <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">Landscaping & Exterior Paint</div>
-                        <div class="checklist-desc">Professional landscaping, fresh exterior paint, curb appeal</div>
-                        <div class="checklist-cost">Est. Cost: $5,000 - $15,000</div>
+                        <div class="checklist-desc">Professional landscaping (0.32 acres), exterior paint for 10,500 SF home</div>
+                        <div class="checklist-cost">Est. Cost: $30,000 - $75,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">100%+</div>
@@ -1657,12 +2291,12 @@
             <div class="checklist-category">
                 <h3>Lower ROI / Higher Risk Projects (38-50%)</h3>
 
-                <div class="checklist-item" data-cost="80000">
+                <div class="checklist-item" data-cost="187500">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">High-End Kitchen Remodel</div>
-                        <div class="checklist-desc">Custom cabinets, luxury appliances, layout changes</div>
-                        <div class="checklist-cost">Est. Cost: $80,000+</div>
+                        <div class="checklist-desc">Custom cabinets ($45-70K), luxury appliances ($35-70K), layout changes</div>
+                        <div class="checklist-cost">Est. Cost: $125,000 - $250,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">~38%</div>
@@ -1670,11 +2304,11 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="150000">
+                <div class="checklist-item" data-cost="175000">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
                         <div class="checklist-title">Addition (500 SF)</div>
-                        <div class="checklist-desc">Expand footprint, add rooms - $165-400/SF for waterfront</div>
+                        <div class="checklist-desc">Expand footprint - waterfront construction runs $300-400/SF</div>
                         <div class="checklist-cost">Est. Cost: $150,000 - $200,000</div>
                     </div>
                     <div class="checklist-roi">
@@ -1683,12 +2317,12 @@
                     </div>
                 </div>
 
-                <div class="checklist-item" data-cost="45000">
+                <div class="checklist-item" data-cost="87500">
                     <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
                     <div class="checklist-content">
-                        <div class="checklist-title">Pool Renovation</div>
-                        <div class="checklist-desc">Resurface, new tile, updated equipment - often returns less than cost</div>
-                        <div class="checklist-cost">Est. Cost: $30,000 - $75,000</div>
+                        <div class="checklist-title">Pool & Spa Renovation</div>
+                        <div class="checklist-desc">Resurface infinity pool, new tile, updated equipment, spa refresh</div>
+                        <div class="checklist-cost">Est. Cost: $50,000 - $125,000</div>
                     </div>
                     <div class="checklist-roi">
                         <div class="roi-value">&lt;50%</div>
@@ -1754,14 +2388,14 @@
             event.target.classList.add('active');
 
             if (type === 'minor') {
-                renovationSlider.value = 200000;
-                salePriceSlider.value = 7370000;
+                renovationSlider.value = 250000;
+                salePriceSlider.value = 7275000;
             } else if (type === 'midrange') {
-                renovationSlider.value = 830000;
-                salePriceSlider.value = 7790000;
+                renovationSlider.value = 950000;
+                salePriceSlider.value = 8350000;
             } else if (type === 'major') {
-                renovationSlider.value = 2020000;
-                salePriceSlider.value = 10000000;
+                renovationSlider.value = 2200000;
+                salePriceSlider.value = 10500000;
             }
             // Custom keeps current values
 
@@ -1810,6 +2444,120 @@
 
         // Initialize calculator
         updateCalculator();
+
+        // Market Position Calculator
+        const positionRenoSlider = document.getElementById('positionReno');
+        const sqft = 8561; // Chen's property square footage
+
+        // Market data for positioning
+        const marketData = [
+            { price: 3700000, address: '4140 Sanctuary Lane', psf: 738, waterfront: false, sqft: 5011 },
+            { price: 4695000, address: '501 Sandpiper Way', psf: 980, waterfront: false, sqft: 4793 },
+            { price: 4699000, address: '4700 Sanctuary Lane', psf: 994, waterfront: true, sqft: 4725 },
+            { price: 8000000, address: '4008 Sanctuary Lane', psf: 1312, waterfront: false, sqft: 6099 },
+            { price: 11950000, address: '4698 Sanctuary Lane', psf: 1452, waterfront: true, sqft: 8230 },
+            { price: 16900000, address: '701 Sanctuary Drive', psf: 2200, waterfront: true, sqft: 7683 },
+            { price: 21500000, address: '4080 Ibis Point Circle', psf: 2418, waterfront: true, sqft: 8891 },
+            { price: 22500000, address: '4111 Ibis Point Circle', psf: 2256, waterfront: true, sqft: 9973 },
+            { price: 22990000, address: '700 Osprey Point Circle', psf: 2018, waterfront: true, sqft: 11395 },
+            { price: 29500000, address: '799 Sanctuary Drive', psf: 2093, waterfront: true, sqft: 14094 }
+        ];
+
+        function calculatePSF(renoAmount) {
+            // Base PSF for unrenovated 2001 home: ~$780/SF (like 775 Oriole sold)
+            // Each $100K invested adds approximately $25-35/SF value
+            // Diminishing returns above $1.5M
+            const basePSF = 780;
+            const renoK = renoAmount / 1000;
+
+            if (renoAmount === 0) return basePSF;
+            if (renoAmount <= 500000) {
+                // Minor reno: higher marginal return ($50/SF per $100K)
+                return basePSF + (renoK / 100) * 50;
+            } else if (renoAmount <= 1000000) {
+                // Mid-range: moderate return
+                return basePSF + 250 + ((renoK - 500) / 100) * 40;
+            } else if (renoAmount <= 1500000) {
+                // Upper mid: diminishing return
+                return basePSF + 450 + ((renoK - 1000) / 100) * 30;
+            } else {
+                // Major: significant diminishing returns
+                return basePSF + 600 + ((renoK - 1500) / 100) * 20;
+            }
+        }
+
+        function getMarketPosition(targetPrice) {
+            // Returns percentage position on the market ladder (0-100%)
+            const minPrice = 3700000;
+            const maxPrice = 29500000;
+            return ((targetPrice - minPrice) / (maxPrice - minPrice)) * 100;
+        }
+
+        function getCompetingProperties(targetPrice) {
+            // Find properties within 30% of target price
+            const lowerBound = targetPrice * 0.75;
+            const upperBound = targetPrice * 1.35;
+            return marketData.filter(p => p.price >= lowerBound && p.price <= upperBound);
+        }
+
+        function updatePositionCalculator() {
+            const renoAmount = parseInt(positionRenoSlider.value);
+            const projPSF = calculatePSF(renoAmount);
+            const targetPrice = Math.round(projPSF * sqft);
+            const totalInvestment = purchasePrice + renoAmount;
+            const closingCosts = targetPrice * 0.075;
+            const breakEven = totalInvestment / (1 - 0.075);
+            const netProfit = targetPrice - closingCosts - totalInvestment;
+            const roi = (netProfit / totalInvestment) * 100;
+            const marketPos = getMarketPosition(targetPrice);
+
+            // Update display values
+            document.getElementById('positionRenoValue').textContent = formatCurrency(renoAmount);
+            document.getElementById('projectedPSF').textContent = '$' + Math.round(projPSF).toLocaleString();
+            document.getElementById('targetSalePrice').textContent = formatCurrency(targetPrice);
+            document.getElementById('breakEvenPrice').textContent = formatCurrency(Math.round(breakEven));
+            document.getElementById('netProfitCalc').textContent = formatCurrency(Math.round(netProfit));
+            document.getElementById('roiCalc').textContent = roi.toFixed(1) + '% ROI';
+
+            // Update Chen's position on the ladder
+            const chenPosition = document.getElementById('chenPosition');
+            const clampedPos = Math.max(5, Math.min(95, marketPos));
+            chenPosition.style.left = clampedPos + '%';
+            document.getElementById('chenPriceLabel').textContent = '$' + (targetPrice / 1000000).toFixed(1) + 'M Target';
+
+            // Update profit color
+            const profitEl = document.getElementById('netProfitCalc');
+            if (netProfit < 0) {
+                profitEl.style.color = '#ff4444';
+            } else if (netProfit < 300000) {
+                profitEl.style.color = '#ffc107';
+            } else {
+                profitEl.style.color = '#00a8e1';
+            }
+
+            // Update competing properties
+            const competitors = getCompetingProperties(targetPrice);
+            const compList = document.getElementById('competingList');
+            compList.innerHTML = competitors.map(p => {
+                const wf = p.waterfront ? p.address.includes('4698') ? '70\' waterfront' : 'Waterfront' : 'No waterfront';
+                return `<div class="competing-item"><span class="comp-addr">${p.address}</span> - <span class="comp-price">$${(p.price/1000000).toFixed(1)}M</span> (${wf}, ${p.sqft.toLocaleString()} SF)</div>`;
+            }).join('');
+
+            // Update advantage text
+            const advantageEl = document.getElementById('advantageText');
+            if (targetPrice < 8000000) {
+                advantageEl.textContent = 'Your waterfront access gives you an edge over non-waterfront competitors at this price point.';
+            } else if (targetPrice < 12000000) {
+                advantageEl.textContent = 'Larger than 4698 Sanctuary Lane (8,230 SF vs 8,561 SF) with same waterfront access. Compelling value proposition.';
+            } else if (targetPrice < 17000000) {
+                advantageEl.textContent = 'Competing with 2015 builds. Renovation must deliver truly modern finishes to justify this price.';
+            } else {
+                advantageEl.textContent = 'Warning: Entering new construction territory. Very difficult to achieve without ground-up rebuild.';
+            }
+        }
+
+        positionRenoSlider.addEventListener('input', updatePositionCalculator);
+        updatePositionCalculator(); // Initialize
 
         // Checklist functionality
         function toggleChecklist(element) {
