@@ -15,6 +15,7 @@
             --dark-gray: #333333;
             --success: #28a745;
             --warning: #ffc107;
+            --danger: #dc3545;
         }
 
         * {
@@ -254,6 +255,214 @@
             opacity: 0.8;
         }
 
+        /* Baseline value card */
+        .baseline-card {
+            max-width: 800px;
+            margin: 60px auto 0;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-left: 4px solid var(--bright-blue);
+        }
+
+        .baseline-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: var(--bright-blue);
+        }
+
+        .baseline-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .baseline-card .highlight-value {
+            color: var(--bright-blue);
+            font-weight: 600;
+        }
+
+        /* Scenario Cards */
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .scenario-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .scenario-card.recommended {
+            border: 3px solid var(--bright-blue);
+        }
+
+        .scenario-header {
+            padding: 28px;
+            text-align: center;
+        }
+
+        .scenario-header.minor {
+            background: linear-gradient(135deg, #2d5a7b, #1a3e5c);
+            color: var(--white);
+        }
+
+        .scenario-header.midrange {
+            background: linear-gradient(135deg, var(--bright-blue), #0088b8);
+            color: var(--white);
+        }
+
+        .scenario-header.major {
+            background: linear-gradient(135deg, #1a3e5c, #0d2840);
+            color: var(--white);
+        }
+
+        .scenario-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            border-radius: 2px;
+        }
+
+        .scenario-card.recommended .scenario-badge {
+            background: var(--success);
+        }
+
+        .scenario-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .scenario-cost {
+            font-size: 32px;
+            font-weight: 300;
+        }
+
+        .scenario-body {
+            padding: 28px;
+        }
+
+        .scenario-includes {
+            margin-bottom: 24px;
+        }
+
+        .scenario-includes h4 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .scenario-includes ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .scenario-includes li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scenario-includes li::before {
+            content: '\2713';
+            color: var(--bright-blue);
+            font-weight: 700;
+        }
+
+        .scenario-results {
+            background: var(--light-gray);
+            padding: 20px;
+            margin-top: 24px;
+            border-radius: 4px;
+        }
+
+        .scenario-result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .scenario-result-row.total {
+            border-top: 2px solid var(--navy);
+            margin-top: 8px;
+            padding-top: 16px;
+            font-weight: 600;
+        }
+
+        .scenario-result-row .label {
+            color: var(--dark-gray);
+        }
+
+        .scenario-result-row .value {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .scenario-result-row .value.positive {
+            color: var(--success);
+        }
+
+        .scenario-result-row .value.warning {
+            color: var(--warning);
+        }
+
+        .scenario-result-row .value.negative {
+            color: var(--danger);
+        }
+
+        .scenario-risk {
+            margin-top: 20px;
+            padding: 16px;
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 3px solid var(--danger);
+            font-size: 13px;
+            color: var(--dark-gray);
+        }
+
+        .scenario-risk.low {
+            background: rgba(40, 167, 69, 0.1);
+            border-color: var(--success);
+        }
+
+        .scenario-risk.medium {
+            background: rgba(255, 193, 7, 0.1);
+            border-color: var(--warning);
+        }
+
+        .scenario-risk strong {
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+        }
+
         /* Calculator Section */
         .calculator-container {
             max-width: 1000px;
@@ -326,9 +535,34 @@
             box-shadow: 0 2px 10px rgba(0,168,225,0.3);
         }
 
+        .preset-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--navy);
+            background: var(--white);
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .preset-btn:hover, .preset-btn.active {
+            background: var(--navy);
+            color: var(--white);
+        }
+
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
             margin-top: 48px;
             padding-top: 48px;
@@ -337,7 +571,7 @@
 
         .result-card {
             text-align: center;
-            padding: 32px 24px;
+            padding: 32px 16px;
             background: var(--light-gray);
             border-radius: 4px;
         }
@@ -348,7 +582,7 @@
         }
 
         .result-card .result-label {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -357,7 +591,7 @@
         }
 
         .result-card .result-value {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 300;
         }
 
@@ -366,55 +600,9 @@
         }
 
         .result-card .result-sub {
-            font-size: 12px;
+            font-size: 11px;
             margin-top: 8px;
             opacity: 0.7;
-        }
-
-        /* Scenarios Table */
-        .scenarios-table {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background: var(--white);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .scenarios-table th {
-            background: var(--navy);
-            color: var(--white);
-            padding: 20px 24px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-align: left;
-        }
-
-        .scenarios-table td {
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--light-gray);
-            font-size: 15px;
-        }
-
-        .scenarios-table tr:hover {
-            background: rgba(0,168,225,0.05);
-        }
-
-        .scenarios-table .scenario-name {
-            font-weight: 600;
-            color: var(--navy);
-        }
-
-        .scenarios-table .roi-positive {
-            color: var(--success);
-            font-weight: 600;
-        }
-
-        .scenarios-table .roi-warning {
-            color: var(--warning);
-            font-weight: 600;
         }
 
         /* Comparables Grid */
@@ -511,13 +699,27 @@
             margin: 0 auto;
         }
 
+        .checklist-category {
+            margin-bottom: 40px;
+        }
+
+        .checklist-category h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bright-blue);
+        }
+
         .checklist-item {
             display: flex;
             align-items: center;
             gap: 24px;
-            padding: 24px 32px;
+            padding: 20px 24px;
             background: rgba(255,255,255,0.05);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             border-left: 4px solid var(--bright-blue);
             transition: background 0.3s;
         }
@@ -554,13 +756,13 @@
         }
 
         .checklist-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             margin-bottom: 4px;
         }
 
         .checklist-desc {
-            font-size: 14px;
+            font-size: 13px;
             opacity: 0.8;
         }
 
@@ -570,7 +772,7 @@
         }
 
         .checklist-roi .roi-value {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 300;
             color: var(--bright-blue);
         }
@@ -583,8 +785,8 @@
         }
 
         .checklist-cost {
-            font-size: 14px;
-            margin-top: 8px;
+            font-size: 13px;
+            margin-top: 4px;
             color: var(--bright-blue);
         }
 
@@ -607,6 +809,36 @@
         .checklist-total .total-value {
             font-size: 32px;
             font-weight: 300;
+        }
+
+        /* Key Insights */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+
+        .insight-card {
+            background: rgba(255,255,255,0.05);
+            padding: 28px;
+            border-left: 4px solid var(--bright-blue);
+        }
+
+        .insight-card h4 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bright-blue);
+            margin-bottom: 12px;
+        }
+
+        .insight-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: 0.9;
         }
 
         /* CTA Section */
@@ -739,10 +971,14 @@
             }
 
             .results-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .comparables-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scenarios-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -753,6 +989,10 @@
 
             .footer-contact {
                 text-align: center;
+            }
+
+            .preset-buttons {
+                justify-content: center;
             }
         }
 
@@ -810,43 +1050,6 @@
             font-size: 12px;
             opacity: 0.8;
         }
-
-        /* Investment summary cards */
-        .investment-summary {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            max-width: 1000px;
-            margin: 60px auto 0;
-        }
-
-        .investment-card {
-            background: rgba(255,255,255,0.05);
-            padding: 28px;
-            text-align: center;
-            border-bottom: 3px solid var(--bright-blue);
-        }
-
-        .investment-card .inv-label {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            opacity: 0.7;
-            margin-bottom: 12px;
-        }
-
-        .investment-card .inv-value {
-            font-size: 28px;
-            font-weight: 300;
-            color: var(--bright-blue);
-        }
-
-        @media (max-width: 768px) {
-            .investment-summary {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
     </style>
 </head>
 <body>
@@ -861,18 +1064,18 @@
         </div>
         <div class="nav-links">
             <a href="#overview">Overview</a>
-            <a href="#calculator">Calculator</a>
             <a href="#scenarios">Scenarios</a>
+            <a href="#calculator">Calculator</a>
             <a href="#comparables">Comparables</a>
-            <a href="#renovations">Renovations</a>
+            <a href="#renovations">ROI Guide</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-badge">Exclusive Comparative Market Analysis</div>
-        <h1>Investment Analysis</h1>
+        <div class="hero-badge">Renovation & Return Analysis</div>
+        <h1>Investment Strategy</h1>
         <div class="address">4298 Sanctuary Lane, Boca Raton</div>
         <div class="prepared-for">Prepared Exclusively For</div>
         <div class="client-name">Michael Chen</div>
@@ -917,53 +1120,233 @@
             </div>
         </div>
 
-        <div class="investment-summary">
-            <div class="investment-card">
-                <div class="inv-label">Purchase Price</div>
-                <div class="inv-value">$6.685M</div>
+        <div class="baseline-card">
+            <h3>Baseline Without Renovation</h3>
+            <p>Assuming <span class="highlight-value">3% annual appreciation</span> (~6% over two years), the property could be worth approximately <span class="highlight-value">$7.21 million</span> in 2026 without any renovation. After typical seller closing costs of 7.5%, net proceeds would be approximately <span class="highlight-value">$6.67 million</span>. This scenario yields little to no profit after holding costs and taxes.</p>
+        </div>
+    </section>
+
+    <!-- Renovation Scenarios -->
+    <section id="scenarios" class="section section-light">
+        <div class="section-header">
+            <h2>Renovation Scenarios</h2>
+            <div class="accent-bar"></div>
+            <p>Three distinct approaches based on Florida renovation cost research and ROI data. Each scenario carries different risk/reward profiles.</p>
+        </div>
+
+        <div class="scenarios-grid">
+            <!-- Minor Renovations -->
+            <div class="scenario-card recommended">
+                <div class="scenario-header minor">
+                    <div class="scenario-badge">Recommended</div>
+                    <div class="scenario-title">Minor Renovations</div>
+                    <div class="scenario-cost">$200,000</div>
+                </div>
+                <div class="scenario-body">
+                    <div class="scenario-includes">
+                        <h4>Scope of Work</h4>
+                        <ul>
+                            <li>Refresh paint throughout</li>
+                            <li>Refinish cabinets</li>
+                            <li>Replace countertops</li>
+                            <li>Update fixtures & lighting</li>
+                            <li>Refinish floors in high-traffic areas</li>
+                            <li>Replace garage door & entry door</li>
+                            <li>Minor landscaping refresh</li>
+                        </ul>
+                    </div>
+                    <div class="scenario-results">
+                        <div class="scenario-result-row">
+                            <span class="label">Purchase Price</span>
+                            <span class="value">$6,685,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Renovation Cost</span>
+                            <span class="value">$200,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Total Investment</span>
+                            <span class="value">$6,885,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Projected Sale</span>
+                            <span class="value">$7,370,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Closing Costs (7.5%)</span>
+                            <span class="value">$552,750</span>
+                        </div>
+                        <div class="scenario-result-row total">
+                            <span class="label">Net Proceeds</span>
+                            <span class="value warning">-$67,750</span>
+                        </div>
+                    </div>
+                    <div class="scenario-risk low">
+                        <strong>Low Risk</strong>
+                        Best cost-benefit ratio. Helps the home show well and minimises buyer objections. Recoups most costs but doesn't generate significant profit.
+                    </div>
+                </div>
             </div>
-            <div class="investment-card">
-                <div class="inv-label">Planned Renovation</div>
-                <div class="inv-value">$1.0M</div>
+
+            <!-- Mid-Range Renovation -->
+            <div class="scenario-card">
+                <div class="scenario-header midrange">
+                    <div class="scenario-badge">Moderate</div>
+                    <div class="scenario-title">Mid-Range Renovation</div>
+                    <div class="scenario-cost">$830,000</div>
+                </div>
+                <div class="scenario-body">
+                    <div class="scenario-includes">
+                        <h4>Scope of Work</h4>
+                        <ul>
+                            <li>Kitchen remodel (no plumbing moves)</li>
+                            <li>Update all 8.5 bathrooms</li>
+                            <li>Replace flooring throughout</li>
+                            <li>Repaint interior & exterior</li>
+                            <li>New energy-efficient windows</li>
+                            <li>New HVAC system</li>
+                            <li>New roof (~$80K)</li>
+                            <li>Improved landscaping & lighting</li>
+                        </ul>
+                    </div>
+                    <div class="scenario-results">
+                        <div class="scenario-result-row">
+                            <span class="label">Purchase Price</span>
+                            <span class="value">$6,685,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Renovation Cost</span>
+                            <span class="value">$830,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Total Investment</span>
+                            <span class="value">$7,515,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Projected Sale</span>
+                            <span class="value">$7,790,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Closing Costs (7.5%)</span>
+                            <span class="value">$584,250</span>
+                        </div>
+                        <div class="scenario-result-row total">
+                            <span class="label">Net Proceeds</span>
+                            <span class="value warning">-$309,250</span>
+                        </div>
+                    </div>
+                    <div class="scenario-risk medium">
+                        <strong>Medium Risk</strong>
+                        Improves marketability and reduces inspection issues. However, typical 50-80% ROI means most returns are absorbed by closing costs.
+                    </div>
+                </div>
             </div>
-            <div class="investment-card">
-                <div class="inv-label">Total Investment</div>
-                <div class="inv-value">$7.685M</div>
+
+            <!-- Major Luxury Renovation -->
+            <div class="scenario-card">
+                <div class="scenario-header major">
+                    <div class="scenario-badge">High Risk</div>
+                    <div class="scenario-title">Major Luxury Renovation</div>
+                    <div class="scenario-cost">$2,020,000</div>
+                </div>
+                <div class="scenario-body">
+                    <div class="scenario-includes">
+                        <h4>Scope of Work</h4>
+                        <ul>
+                            <li>Complete interior modernisation</li>
+                            <li>New layouts, relocate kitchen</li>
+                            <li>Luxury finishes throughout</li>
+                            <li>Replace all mechanical systems</li>
+                            <li>500 sq ft addition</li>
+                            <li>New outdoor kitchen & deck</li>
+                            <li>Smart home technology</li>
+                        </ul>
+                    </div>
+                    <div class="scenario-results">
+                        <div class="scenario-result-row">
+                            <span class="label">Purchase Price</span>
+                            <span class="value">$6,685,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Renovation Cost</span>
+                            <span class="value">$2,020,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Total Investment</span>
+                            <span class="value">$8,705,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Target Sale ($10M)</span>
+                            <span class="value">$10,000,000</span>
+                        </div>
+                        <div class="scenario-result-row">
+                            <span class="label">Closing Costs (7.5%)</span>
+                            <span class="value">$750,000</span>
+                        </div>
+                        <div class="scenario-result-row total">
+                            <span class="label">Net Profit (at $10M)</span>
+                            <span class="value positive">$545,000</span>
+                        </div>
+                    </div>
+                    <div class="scenario-risk">
+                        <strong>High Risk</strong>
+                        Must sell for $10M+ to profit. If market supports only $9M, net gain drops to ~$20K. Requires buyer willing to pay new-construction prices for a renovated 2001 structure.
+                    </div>
+                </div>
             </div>
-            <div class="investment-card">
-                <div class="inv-label">2025 Market Value</div>
-                <div class="inv-value">$6.64M</div>
+        </div>
+
+        <!-- Key Insights -->
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4>The 50% Rule</h4>
+                <p>If cumulative repairs exceed 50% of the home's value, Florida's "50% rule" may trigger full code upgrades and elevation changes, significantly increasing costs.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Hidden Costs</h4>
+                <p>Unexpected issues like mould, rotten framing, or unpermitted prior work often surface once walls are opened, causing budget overruns of 10-20%.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Market Reality</h4>
+                <p>High-end luxury remodels recoup only 38-50% of cost. To justify $2M+ in renovation, the home must compete with new construction selling at $1,500+/SF.</p>
             </div>
         </div>
     </section>
 
     <!-- Interactive Calculator -->
-    <section id="calculator" class="section section-light">
+    <section id="calculator" class="section">
         <div class="section-header">
-            <h2>Investment Calculator</h2>
+            <h2>Custom Scenario Calculator</h2>
             <div class="accent-bar"></div>
-            <p>Adjust the sliders below to explore different sale scenarios and understand your potential return on investment.</p>
+            <p>Model your own renovation scenario. Adjust the sliders or use preset buttons to explore different investment levels.</p>
         </div>
 
         <div class="calculator-container">
             <div class="calculator-header">
-                <h3>Customize Your Scenario</h3>
+                <h3>Build Your Scenario</h3>
             </div>
             <div class="calculator-body">
-                <div class="slider-group">
-                    <div class="slider-label">
-                        <span>Target Sale Price</span>
-                        <span class="slider-value" id="salePriceValue">$9,000,000</span>
-                    </div>
-                    <input type="range" id="salePrice" min="7000000" max="14000000" step="100000" value="9000000">
+                <div class="preset-buttons">
+                    <button class="preset-btn" onclick="setPreset('minor')">Minor ($200K)</button>
+                    <button class="preset-btn active" onclick="setPreset('midrange')">Mid-Range ($830K)</button>
+                    <button class="preset-btn" onclick="setPreset('major')">Major ($2.02M)</button>
+                    <button class="preset-btn" onclick="setPreset('custom')">Custom</button>
                 </div>
 
                 <div class="slider-group">
                     <div class="slider-label">
                         <span>Renovation Budget</span>
-                        <span class="slider-value" id="renovationValue">$1,000,000</span>
+                        <span class="slider-value" id="renovationValue">$830,000</span>
                     </div>
-                    <input type="range" id="renovation" min="500000" max="2000000" step="50000" value="1000000">
+                    <input type="range" id="renovation" min="100000" max="2500000" step="10000" value="830000">
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Target Sale Price</span>
+                        <span class="slider-value" id="salePriceValue">$7,790,000</span>
+                    </div>
+                    <input type="range" id="salePrice" min="7000000" max="14000000" step="10000" value="7790000">
                 </div>
 
                 <div class="slider-group">
@@ -977,80 +1360,27 @@
                 <div class="results-grid">
                     <div class="result-card">
                         <div class="result-label">Total Investment</div>
-                        <div class="result-value" id="totalInvestment">$7,685,000</div>
-                        <div class="result-sub">Purchase + Renovation</div>
+                        <div class="result-value" id="totalInvestment">$7,515,000</div>
+                        <div class="result-sub">Purchase + Reno</div>
                     </div>
                     <div class="result-card">
                         <div class="result-label">Closing Costs</div>
-                        <div class="result-value" id="closingCosts">$675,000</div>
+                        <div class="result-value" id="closingCosts">$584,250</div>
                         <div class="result-sub">At sale</div>
                     </div>
+                    <div class="result-card">
+                        <div class="result-label">Break-Even Sale</div>
+                        <div class="result-value" id="breakEven">$8,124,324</div>
+                        <div class="result-sub">Min. to profit</div>
+                    </div>
                     <div class="result-card highlight">
-                        <div class="result-label">Net Profit</div>
-                        <div class="result-value" id="netProfit">$640,000</div>
-                        <div class="result-sub" id="roiPercent">8.3% ROI</div>
+                        <div class="result-label">Net Profit/Loss</div>
+                        <div class="result-value" id="netProfit">-$309,250</div>
+                        <div class="result-sub" id="roiPercent">-4.1% ROI</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Sale Scenarios -->
-    <section id="scenarios" class="section">
-        <div class="section-header">
-            <h2>Sale Scenarios</h2>
-            <div class="accent-bar"></div>
-            <p>Based on a $6.685M purchase price and $1M renovation investment, here are your projected outcomes at various sale prices.</p>
-        </div>
-
-        <table class="scenarios-table">
-            <thead>
-                <tr>
-                    <th>Scenario</th>
-                    <th>Sale Price</th>
-                    <th>Closing (7%)</th>
-                    <th>Net Proceeds</th>
-                    <th>ROI</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="scenario-name">Conservative</td>
-                    <td>$8,500,000</td>
-                    <td>$595,000</td>
-                    <td>$220,000</td>
-                    <td class="roi-warning">2.9%</td>
-                </tr>
-                <tr>
-                    <td class="scenario-name">Moderate</td>
-                    <td>$9,000,000</td>
-                    <td>$630,000</td>
-                    <td>$685,000</td>
-                    <td class="roi-warning">8.9%</td>
-                </tr>
-                <tr>
-                    <td class="scenario-name">Target</td>
-                    <td>$10,000,000</td>
-                    <td>$700,000</td>
-                    <td>$1,615,000</td>
-                    <td class="roi-positive">21.0%</td>
-                </tr>
-                <tr>
-                    <td class="scenario-name">Optimistic</td>
-                    <td>$11,000,000</td>
-                    <td>$770,000</td>
-                    <td>$2,545,000</td>
-                    <td class="roi-positive">33.1%</td>
-                </tr>
-                <tr>
-                    <td class="scenario-name">Premium</td>
-                    <td>$12,000,000</td>
-                    <td>$840,000</td>
-                    <td>$3,475,000</td>
-                    <td class="roi-positive">45.2%</td>
-                </tr>
-            </tbody>
-        </table>
     </section>
 
     <!-- Comparables -->
@@ -1058,7 +1388,7 @@
         <div class="section-header">
             <h2>Market Comparables</h2>
             <div class="accent-bar"></div>
-            <p>Recent sales and active listings in The Sanctuary that inform your property's potential value.</p>
+            <p>Recent sales in The Sanctuary show the premium for new construction vs. renovated older homes.</p>
         </div>
 
         <div class="comparables-grid">
@@ -1109,22 +1439,22 @@
             </div>
 
             <div class="comp-card">
-                <div class="comp-image">LISTED</div>
+                <div class="comp-image">SOLD</div>
                 <div class="comp-content">
-                    <div class="comp-address">4698 Sanctuary Lane</div>
+                    <div class="comp-address">650 Tern Point Circle</div>
                     <div class="comp-details">
                         <span>Waterfront</span>
-                        <span>8,230 SF</span>
-                        <span>Built 1989</span>
-                        <span>Modernized</span>
+                        <span>Modern Build</span>
+                        <span>Deep Water</span>
+                        <span>New Construction</span>
                     </div>
                     <div class="comp-stats">
                         <div class="comp-stat">
-                            <div class="stat-value">$11.95M</div>
-                            <div class="stat-label">List Price</div>
+                            <div class="stat-value">$14.3M</div>
+                            <div class="stat-label">Sale Price</div>
                         </div>
                         <div class="comp-stat">
-                            <div class="stat-value">$1,452</div>
+                            <div class="stat-value">$1,500+</div>
                             <div class="stat-label">Per Sq Ft</div>
                         </div>
                     </div>
@@ -1136,26 +1466,26 @@
         <div class="psf-visualization">
             <h3 style="text-align: center; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 40px;">Price Per Square Foot Range in The Sanctuary</h3>
             <div class="psf-bar">
-                <div class="psf-marker" style="left: 15%;">
+                <div class="psf-marker" style="left: 10%;">
                     <div class="marker-value">$777</div>
-                    <div class="marker-label">775 Oriole</div>
+                    <div class="marker-label">Older Renovated</div>
                 </div>
-                <div class="psf-marker" style="left: 45%;">
-                    <div class="marker-value">$1,050</div>
-                    <div class="marker-label">Your Target</div>
+                <div class="psf-marker" style="left: 35%;">
+                    <div class="marker-value">$910</div>
+                    <div class="marker-label">Mid-Range Target</div>
                 </div>
-                <div class="psf-marker" style="left: 65%;">
-                    <div class="marker-value">$1,452</div>
-                    <div class="marker-label">4698 Sanctuary</div>
+                <div class="psf-marker" style="left: 60%;">
+                    <div class="marker-value">$1,168</div>
+                    <div class="marker-label">Major Reno Target</div>
                 </div>
                 <div class="psf-marker" style="left: 90%;">
                     <div class="marker-value">$1,593</div>
-                    <div class="marker-label">700 Tern Point</div>
+                    <div class="marker-label">New Construction</div>
                 </div>
             </div>
             <div class="psf-legend">
-                <span>$770/SF (Renovated)</span>
-                <span>$1,600/SF (New Construction)</span>
+                <span>$770/SF (Renovated 2000s)</span>
+                <span>$1,600/SF (New Build 2022+)</span>
             </div>
         </div>
     </section>
@@ -1165,7 +1495,7 @@
         <div class="section-header">
             <h2>Price History</h2>
             <div class="accent-bar"></div>
-            <p>The historical sale prices of 4298 Sanctuary Lane illustrate market cycles and long-term appreciation potential.</p>
+            <p>Historical sale prices illustrate market cycles. The 2022 peak was followed by significant correction.</p>
         </div>
 
         <div class="chart-container">
@@ -1173,122 +1503,203 @@
         </div>
     </section>
 
-    <!-- Renovation Checklist -->
+    <!-- Renovation ROI Guide -->
     <section id="renovations" class="section section-dark">
         <div class="section-header">
             <h2>Renovation ROI Guide</h2>
             <div class="accent-bar"></div>
-            <p>Select the improvements you're considering. Items are ranked by typical return on investment in the South Florida luxury market.</p>
+            <p>Research-based ROI data for Florida home improvements. Focus on high-return projects and avoid over-personalisation.</p>
         </div>
 
         <div class="checklist-container">
-            <div class="checklist-item" data-cost="75000">
-                <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">Minor Kitchen Remodel</div>
-                    <div class="checklist-desc">Cabinet refacing, new countertops, updated appliances, modern fixtures</div>
-                    <div class="checklist-cost">Est. Cost: $75,000 - $150,000</div>
+            <div class="checklist-category">
+                <h3>Highest ROI Projects (80-200%+)</h3>
+
+                <div class="checklist-item" data-cost="20000">
+                    <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Garage Door Replacement</div>
+                        <div class="checklist-desc">High-end insulated doors with smart technology</div>
+                        <div class="checklist-cost">Est. Cost: $4,500 - $20,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">98-194%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">85.7%</div>
-                    <div class="roi-label">Avg ROI</div>
+
+                <div class="checklist-item" data-cost="8000">
+                    <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Entry Door Replacement</div>
+                        <div class="checklist-desc">Steel or fiberglass entry door with modern hardware</div>
+                        <div class="checklist-cost">Est. Cost: $2,000 - $8,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">100-216%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item" data-cost="27500">
+                    <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Minor Kitchen Remodel</div>
+                        <div class="checklist-desc">Reface cabinets, quartz countertops, modern appliances, new fixtures</div>
+                        <div class="checklist-cost">Est. Cost: $20,000 - $40,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">52-96%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="checklist-item" data-cost="25000">
-                <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">Garage Door Replacement</div>
-                    <div class="checklist-desc">High-end insulated doors with smart technology</div>
-                    <div class="checklist-cost">Est. Cost: $15,000 - $25,000</div>
+            <div class="checklist-category">
+                <h3>Strong ROI Projects (60-90%)</h3>
+
+                <div class="checklist-item" data-cost="25000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Bathroom Updates (Mid-Range)</div>
+                        <div class="checklist-desc">Modern fixtures, new tile, frameless glass, updated vanities</div>
+                        <div class="checklist-cost">Est. Cost: $5,000 - $30,000 per bath</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">57-93%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">100%+</div>
-                    <div class="roi-label">Avg ROI</div>
+
+                <div class="checklist-item" data-cost="80000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">New Roof (Tile or Metal)</div>
+                        <div class="checklist-desc">Hurricane-rated roofing, essential for insurance approval</div>
+                        <div class="checklist-cost">Est. Cost: $60,000 - $100,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">70-90%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item" data-cost="75000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Impact Windows (ENERGY STAR)</div>
+                        <div class="checklist-desc">Hurricane-rated impact glass, reduces insurance premiums</div>
+                        <div class="checklist-cost">Est. Cost: $50,000 - $100,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">70-90%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item" data-cost="15000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Deck or Outdoor Living Space</div>
+                        <div class="checklist-desc">Wooden or composite deck, outdoor entertaining area</div>
+                        <div class="checklist-cost">Est. Cost: $15,000 - $60,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">68-83%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="checklist-item" data-cost="150000">
-                <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">New Flooring Throughout</div>
-                    <div class="checklist-desc">Luxury porcelain tile, engineered hardwood, or natural stone</div>
-                    <div class="checklist-cost">Est. Cost: $100,000 - $200,000</div>
+            <div class="checklist-category">
+                <h3>Moderate ROI Projects (50-70%)</h3>
+
+                <div class="checklist-item" data-cost="85000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Flooring Throughout</div>
+                        <div class="checklist-desc">Luxury porcelain tile, engineered hardwood, or natural stone (8,500 SF)</div>
+                        <div class="checklist-cost">Est. Cost: $5-25/SF = $42,000 - $215,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">50-70%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">70-80%</div>
-                    <div class="roi-label">Avg ROI</div>
+
+                <div class="checklist-item" data-cost="25000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">HVAC Replacement</div>
+                        <div class="checklist-desc">Modern energy-efficient system, smart thermostat integration</div>
+                        <div class="checklist-cost">Est. Cost: $15,000 - $35,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">65-100%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item" data-cost="10000">
+                    <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Landscaping & Exterior Paint</div>
+                        <div class="checklist-desc">Professional landscaping, fresh exterior paint, curb appeal</div>
+                        <div class="checklist-cost">Est. Cost: $5,000 - $15,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">100%+</div>
+                        <div class="roi-label">Perceived Value</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="checklist-item" data-cost="175000">
-                <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">New Roof</div>
-                    <div class="checklist-desc">Tile or metal roof with hurricane rating, essential for insurance</div>
-                    <div class="checklist-cost">Est. Cost: $150,000 - $200,000</div>
-                </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">60-70%</div>
-                    <div class="roi-label">Avg ROI</div>
-                </div>
-            </div>
+            <div class="checklist-category">
+                <h3>Lower ROI / Higher Risk Projects (38-50%)</h3>
 
-            <div class="checklist-item" data-cost="100000">
-                <div class="checklist-checkbox checked" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">Lighting & Electrical Update</div>
-                    <div class="checklist-desc">LED recessed lighting, smart home integration, updated panels</div>
-                    <div class="checklist-cost">Est. Cost: $75,000 - $125,000</div>
+                <div class="checklist-item" data-cost="80000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">High-End Kitchen Remodel</div>
+                        <div class="checklist-desc">Custom cabinets, luxury appliances, layout changes</div>
+                        <div class="checklist-cost">Est. Cost: $80,000+</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">~38%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">65-75%</div>
-                    <div class="roi-label">Avg ROI</div>
-                </div>
-            </div>
 
-            <div class="checklist-item" data-cost="200000">
-                <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">Bathroom Renovations (All)</div>
-                    <div class="checklist-desc">Modern spa-like finishes, frameless glass, smart fixtures</div>
-                    <div class="checklist-cost">Est. Cost: $150,000 - $250,000</div>
+                <div class="checklist-item" data-cost="150000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Addition (500 SF)</div>
+                        <div class="checklist-desc">Expand footprint, add rooms - $165-400/SF for waterfront</div>
+                        <div class="checklist-cost">Est. Cost: $150,000 - $200,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">40-50%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">60-70%</div>
-                    <div class="roi-label">Avg ROI</div>
-                </div>
-            </div>
 
-            <div class="checklist-item" data-cost="50000">
-                <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">Pool & Outdoor Refresh</div>
-                    <div class="checklist-desc">Resurface pool, update deck, refresh landscaping</div>
-                    <div class="checklist-cost">Est. Cost: $40,000 - $75,000</div>
-                </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">50-60%</div>
-                    <div class="roi-label">Avg ROI</div>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-cost="75000">
-                <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
-                <div class="checklist-content">
-                    <div class="checklist-title">Impact Windows & Doors</div>
-                    <div class="checklist-desc">Hurricane-rated impact glass throughout, reduces insurance</div>
-                    <div class="checklist-cost">Est. Cost: $60,000 - $100,000</div>
-                </div>
-                <div class="checklist-roi">
-                    <div class="roi-value">70-80%</div>
-                    <div class="roi-label">Avg ROI</div>
+                <div class="checklist-item" data-cost="45000">
+                    <div class="checklist-checkbox" onclick="toggleChecklist(this)"></div>
+                    <div class="checklist-content">
+                        <div class="checklist-title">Pool Renovation</div>
+                        <div class="checklist-desc">Resurface, new tile, updated equipment - often returns less than cost</div>
+                        <div class="checklist-cost">Est. Cost: $30,000 - $75,000</div>
+                    </div>
+                    <div class="checklist-roi">
+                        <div class="roi-value">&lt;50%</div>
+                        <div class="roi-label">ROI Range</div>
+                    </div>
                 </div>
             </div>
 
             <div class="checklist-total">
                 <div class="total-label">Selected Renovation Budget</div>
-                <div class="total-value" id="checklistTotal">$525,000</div>
+                <div class="total-value" id="checklistTotal">$65,500</div>
             </div>
         </div>
     </section>
@@ -1296,7 +1707,7 @@
     <!-- Call to Action -->
     <section id="contact" class="cta-section">
         <h2>Ready to Discuss Your Strategy?</h2>
-        <p>Let's review these scenarios together and create a customized plan that maximizes your investment in this exceptional Sanctuary estate.</p>
+        <p>Let's review these scenarios together and develop a renovation plan that balances risk, cost, and return for your Sanctuary estate.</p>
         <a href="tel:5612896683" class="cta-button">Schedule a Consultation</a>
     </section>
 
@@ -1315,7 +1726,7 @@
             </div>
         </div>
         <div class="footer-disclaimer">
-            This Comparative Market Analysis is for informational purposes only and does not constitute an appraisal. Market conditions, comparable selections, and renovation costs may vary. Consult with qualified professionals before making investment decisions. Prepared January 2026.
+            This analysis is based on Florida renovation cost research (Tri-Town Construction 2025, Haley Home Services) and ROI data (Tropic Renovations, national cost-vs-value reports). Actual costs and returns may vary based on market conditions, contractor selection, and scope changes. Consult with qualified professionals before making investment decisions. Prepared January 2026.
         </div>
     </footer>
 
@@ -1328,7 +1739,33 @@
         const purchasePrice = 6685000;
 
         function formatCurrency(num) {
-            return '$' + num.toLocaleString('en-US');
+            if (num >= 0) {
+                return '$' + num.toLocaleString('en-US');
+            } else {
+                return '-$' + Math.abs(num).toLocaleString('en-US');
+            }
+        }
+
+        function setPreset(type) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            if (type === 'minor') {
+                renovationSlider.value = 200000;
+                salePriceSlider.value = 7370000;
+            } else if (type === 'midrange') {
+                renovationSlider.value = 830000;
+                salePriceSlider.value = 7790000;
+            } else if (type === 'major') {
+                renovationSlider.value = 2020000;
+                salePriceSlider.value = 10000000;
+            }
+            // Custom keeps current values
+
+            updateCalculator();
         }
 
         function updateCalculator() {
@@ -1341,11 +1778,18 @@
             const netProfit = salePrice - closingCosts - totalInvestment;
             const roi = (netProfit / totalInvestment) * 100;
 
+            // Calculate break-even sale price
+            // breakEven - (breakEven * closingRate) = totalInvestment
+            // breakEven * (1 - closingRate) = totalInvestment
+            // breakEven = totalInvestment / (1 - closingRate)
+            const breakEven = totalInvestment / (1 - closingRate);
+
             document.getElementById('salePriceValue').textContent = formatCurrency(salePrice);
             document.getElementById('renovationValue').textContent = formatCurrency(renovation);
-            document.getElementById('closingRateValue').textContent = closingRate * 100 + '%';
+            document.getElementById('closingRateValue').textContent = (closingRate * 100).toFixed(1) + '%';
             document.getElementById('totalInvestment').textContent = formatCurrency(totalInvestment);
             document.getElementById('closingCosts').textContent = formatCurrency(Math.round(closingCosts));
+            document.getElementById('breakEven').textContent = formatCurrency(Math.round(breakEven));
             document.getElementById('netProfit').textContent = formatCurrency(Math.round(netProfit));
             document.getElementById('roiPercent').textContent = roi.toFixed(1) + '% ROI';
 
@@ -1364,6 +1808,9 @@
         renovationSlider.addEventListener('input', updateCalculator);
         closingRateSlider.addEventListener('input', updateCalculator);
 
+        // Initialize calculator
+        updateCalculator();
+
         // Checklist functionality
         function toggleChecklist(element) {
             element.classList.toggle('checked');
@@ -1378,6 +1825,9 @@
             });
             document.getElementById('checklistTotal').textContent = formatCurrency(total);
         }
+
+        // Initialize checklist total
+        updateChecklistTotal();
 
         // Price History Chart
         const ctx = document.getElementById('priceChart').getContext('2d');
