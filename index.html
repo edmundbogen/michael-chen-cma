@@ -1582,7 +1582,7 @@
 
         <div class="baseline-card">
             <h3>Baseline Without Renovation</h3>
-            <p>Assuming <span class="highlight-value">3% annual appreciation</span> (~6% over two years), the property could be worth approximately <span class="highlight-value">$7.21 million</span> in 2026 without any renovation. After typical seller closing costs of 7.5%, net proceeds would be approximately <span class="highlight-value">$6.67 million</span>. This scenario yields little to no profit after holding costs and taxes.</p>
+            <p>Based on actual market data, the <span class="highlight-value">$6M-$10M segment is down 2% year-over-year</span>. The comparable sale of 775 Oriole Circle at <span class="highlight-value">$777/SF</span> (Dec 2025) suggests your property would sell at approximately <span class="highlight-value">$6.65M</span> ($777/SF x 8,561 SF) without renovation. After 7.5% closing costs (~$499K), net proceeds would be approximately <span class="highlight-value">$6.15 million</span> — a loss of roughly <span class="highlight-value">$535,000</span> from your $6.685M purchase price.</p>
         </div>
     </section>
 
@@ -1629,21 +1629,21 @@
                             <span class="value">$6,935,000</span>
                         </div>
                         <div class="scenario-result-row">
-                            <span class="label">Projected Sale (~$850/SF)</span>
-                            <span class="value">$7,275,000</span>
+                            <span class="label">Projected Sale (~$875/SF)</span>
+                            <span class="value">$7,490,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Closing Costs (7.5%)</span>
-                            <span class="value">$545,625</span>
+                            <span class="value">$561,750</span>
                         </div>
                         <div class="scenario-result-row total">
                             <span class="label">Net Proceeds</span>
-                            <span class="value warning">-$205,625</span>
+                            <span class="value warning">-$6,750</span>
                         </div>
                     </div>
                     <div class="scenario-risk low">
-                        <strong>Low Risk</strong>
-                        Best cost-benefit ratio. Comparable to 775 Oriole Circle ($777/SF). Helps home show well but likely results in modest loss after closing costs.
+                        <strong>Low Risk / Break-Even</strong>
+                        Positions above 775 Oriole Circle ($777/SF). Home shows well, sells faster, but essentially breaks even after closing costs. Minimizes downside risk.
                     </div>
                 </div>
             </div>
@@ -1681,21 +1681,21 @@
                             <span class="value">$7,635,000</span>
                         </div>
                         <div class="scenario-result-row">
-                            <span class="label">Projected Sale (~$975/SF)</span>
-                            <span class="value">$8,350,000</span>
+                            <span class="label">Projected Sale (~$1,050/SF)</span>
+                            <span class="value">$8,990,000</span>
                         </div>
                         <div class="scenario-result-row">
                             <span class="label">Closing Costs (7.5%)</span>
-                            <span class="value">$626,250</span>
+                            <span class="value">$674,250</span>
                         </div>
                         <div class="scenario-result-row total">
                             <span class="label">Net Proceeds</span>
-                            <span class="value positive">$88,750</span>
+                            <span class="value positive">$680,750</span>
                         </div>
                     </div>
                     <div class="scenario-risk medium">
-                        <strong>Medium Risk</strong>
-                        Positions between 775 Oriole ($777/SF) and 4698 Sanctuary Lane listing ($1,452/SF). Modest profit possible if market supports $975+/SF.
+                        <strong>Moderate Risk / Solid Return</strong>
+                        Fills the $8M-$12M market gap with no direct competition. Positions between 775 Oriole ($777/SF) and 4698 Sanctuary Lane ($1,452/SF). Moves you into the accelerating $10M+ segment.
                     </div>
                 </div>
             </div>
@@ -1803,9 +1803,9 @@
                 <div class="slider-group">
                     <div class="slider-label">
                         <span>Target Sale Price</span>
-                        <span class="slider-value" id="salePriceValue">$8,350,000</span>
+                        <span class="slider-value" id="salePriceValue">$8,990,000</span>
                     </div>
-                    <input type="range" id="salePrice" min="7000000" max="14000000" step="10000" value="8350000">
+                    <input type="range" id="salePrice" min="7000000" max="14000000" step="10000" value="8990000">
                 </div>
 
                 <div class="slider-group">
@@ -2475,10 +2475,10 @@
 
             if (type === 'minor') {
                 renovationSlider.value = 250000;
-                salePriceSlider.value = 7275000;
+                salePriceSlider.value = 7490000;
             } else if (type === 'midrange') {
                 renovationSlider.value = 950000;
-                salePriceSlider.value = 8350000;
+                salePriceSlider.value = 8990000;
             } else if (type === 'major') {
                 renovationSlider.value = 2200000;
                 salePriceSlider.value = 10500000;
