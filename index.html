@@ -892,7 +892,7 @@
 
         <div class="property-grid">
             <div class="property-stat">
-                <div class="value">$6.0M</div>
+                <div class="value">$6.685M</div>
                 <div class="label">Purchase Price (June 2024)</div>
             </div>
             <div class="property-stat">
@@ -920,7 +920,7 @@
         <div class="investment-summary">
             <div class="investment-card">
                 <div class="inv-label">Purchase Price</div>
-                <div class="inv-value">$6.0M</div>
+                <div class="inv-value">$6.685M</div>
             </div>
             <div class="investment-card">
                 <div class="inv-label">Planned Renovation</div>
@@ -928,7 +928,7 @@
             </div>
             <div class="investment-card">
                 <div class="inv-label">Total Investment</div>
-                <div class="inv-value">$7.0M</div>
+                <div class="inv-value">$7.685M</div>
             </div>
             <div class="investment-card">
                 <div class="inv-label">2025 Market Value</div>
@@ -977,7 +977,7 @@
                 <div class="results-grid">
                     <div class="result-card">
                         <div class="result-label">Total Investment</div>
-                        <div class="result-value" id="totalInvestment">$7,000,000</div>
+                        <div class="result-value" id="totalInvestment">$7,685,000</div>
                         <div class="result-sub">Purchase + Renovation</div>
                     </div>
                     <div class="result-card">
@@ -987,8 +987,8 @@
                     </div>
                     <div class="result-card highlight">
                         <div class="result-label">Net Profit</div>
-                        <div class="result-value" id="netProfit">$1,325,000</div>
-                        <div class="result-sub" id="roiPercent">18.9% ROI</div>
+                        <div class="result-value" id="netProfit">$640,000</div>
+                        <div class="result-sub" id="roiPercent">8.3% ROI</div>
                     </div>
                 </div>
             </div>
@@ -1000,7 +1000,7 @@
         <div class="section-header">
             <h2>Sale Scenarios</h2>
             <div class="accent-bar"></div>
-            <p>Based on a $6M purchase price and $1M renovation investment, here are your projected outcomes at various sale prices.</p>
+            <p>Based on a $6.685M purchase price and $1M renovation investment, here are your projected outcomes at various sale prices.</p>
         </div>
 
         <table class="scenarios-table">
@@ -1016,38 +1016,38 @@
             <tbody>
                 <tr>
                     <td class="scenario-name">Conservative</td>
-                    <td>$8,000,000</td>
-                    <td>$560,000</td>
-                    <td>$440,000</td>
-                    <td class="roi-warning">6.3%</td>
+                    <td>$8,500,000</td>
+                    <td>$595,000</td>
+                    <td>$220,000</td>
+                    <td class="roi-warning">2.9%</td>
                 </tr>
                 <tr>
                     <td class="scenario-name">Moderate</td>
                     <td>$9,000,000</td>
                     <td>$630,000</td>
-                    <td>$1,370,000</td>
-                    <td class="roi-positive">19.6%</td>
+                    <td>$685,000</td>
+                    <td class="roi-warning">8.9%</td>
                 </tr>
                 <tr>
                     <td class="scenario-name">Target</td>
                     <td>$10,000,000</td>
                     <td>$700,000</td>
-                    <td>$2,300,000</td>
-                    <td class="roi-positive">32.9%</td>
+                    <td>$1,615,000</td>
+                    <td class="roi-positive">21.0%</td>
                 </tr>
                 <tr>
                     <td class="scenario-name">Optimistic</td>
                     <td>$11,000,000</td>
                     <td>$770,000</td>
-                    <td>$3,230,000</td>
-                    <td class="roi-positive">46.1%</td>
+                    <td>$2,545,000</td>
+                    <td class="roi-positive">33.1%</td>
                 </tr>
                 <tr>
                     <td class="scenario-name">Premium</td>
                     <td>$12,000,000</td>
                     <td>$840,000</td>
-                    <td>$4,160,000</td>
-                    <td class="roi-positive">59.4%</td>
+                    <td>$3,475,000</td>
+                    <td class="roi-positive">45.2%</td>
                 </tr>
             </tbody>
         </table>
@@ -1325,7 +1325,7 @@
         const renovationSlider = document.getElementById('renovation');
         const closingRateSlider = document.getElementById('closingRate');
 
-        const purchasePrice = 6000000;
+        const purchasePrice = 6685000;
 
         function formatCurrency(num) {
             return '$' + num.toLocaleString('en-US');
@@ -1387,7 +1387,7 @@
                 labels: ['1981', '1987', '1999', '2000', '2001', '2007', '2017', '2022', '2024'],
                 datasets: [{
                     label: 'Sale Price',
-                    data: [0.3, 1.225, 1.44, 1.8, 7.95, 5.56, 5.75, 7.75, 6.0],
+                    data: [0.3, 1.225, 1.44, 1.8, 7.95, 5.56, 5.75, 7.75, 6.685],
                     borderColor: '#00a8e1',
                     backgroundColor: 'rgba(0, 168, 225, 0.1)',
                     borderWidth: 3,
