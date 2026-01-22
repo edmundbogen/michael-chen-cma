@@ -1432,6 +1432,74 @@
             font-weight: 500;
         }
 
+        /* Key Benchmark Box */
+        .key-benchmark {
+            margin-top: 32px;
+            padding: 24px;
+            background: linear-gradient(135deg, var(--navy), #0d2840);
+            border-radius: 4px;
+            color: var(--white);
+        }
+
+        .key-benchmark h4 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bright-blue);
+            margin-bottom: 12px;
+        }
+
+        .benchmark-property {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .benchmark-details {
+            flex: 1;
+        }
+
+        .benchmark-address {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .benchmark-specs {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .benchmark-price {
+            text-align: right;
+        }
+
+        .benchmark-price .price {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--bright-blue);
+        }
+
+        .benchmark-price .psf {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .benchmark-comparison {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .benchmark-comparison strong {
+            color: var(--bright-blue);
+        }
+
         @media (max-width: 768px) {
             .position-results {
                 grid-template-columns: repeat(2, 1fr);
@@ -2011,7 +2079,8 @@
         <div class="market-gap-callout">
             <h3>The Market Opportunity</h3>
             <div class="gap-range">$8M - $11.95M = No Competition</div>
-            <p>There's a <strong>$4 million gap</strong> in the market between 4008 Sanctuary Lane ($8M) and 4698 Sanctuary Lane ($11.95M). Michael's property at 8,561 SF with 70' waterfront is <strong>larger than 4698 Sanctuary Lane</strong> (8,230 SF) and perfectly positioned to fill this gap with the right renovation. Rising tides raise all ships.</p>
+            <p>There's a <strong>$4 million gap</strong> in the market between 4008 Sanctuary Lane ($8M) and 4698 Sanctuary Lane ($11.95M). Your property at 8,561 SF with 70' waterfront is <strong>larger than 4698</strong> (8,230 SF) and perfectly positioned to fill this gap.</p>
+            <p style="margin-top: 16px;"><strong>Market Insight:</strong> The $6M-$10M segment is softening (-2% YoY), but the <strong>$10M+ segment is accelerating (+15% YoY)</strong>. With the right renovation, you move from the softening segment into the accelerating one.</p>
         </div>
     </section>
 
@@ -2105,6 +2174,23 @@
                         <div class="result-label">Net Profit</div>
                         <div class="result-value" id="netProfitCalc">$677,392</div>
                         <div class="result-sub" id="roiCalc">9.5% ROI</div>
+                    </div>
+                </div>
+
+                <div class="key-benchmark">
+                    <h4>Key Benchmark: Your Direct Comparable</h4>
+                    <div class="benchmark-property">
+                        <div class="benchmark-details">
+                            <div class="benchmark-address">4698 Sanctuary Lane</div>
+                            <div class="benchmark-specs">8,230 SF | 70' Waterfront | Built 1989 | Modernized</div>
+                        </div>
+                        <div class="benchmark-price">
+                            <div class="price">$11,950,000</div>
+                            <div class="psf">$1,452/SF asking</div>
+                        </div>
+                    </div>
+                    <div class="benchmark-comparison">
+                        <strong>Your property advantages:</strong> Larger (8,561 vs 8,230 SF), newer building (2001 vs 1989), same 70' waterfront. With comparable renovations, your property should command similar or better pricing per square foot.
                     </div>
                 </div>
 
@@ -2464,26 +2550,36 @@
         ];
 
         function calculatePSF(renoAmount) {
-            // Base PSF for unrenovated 2001 home: ~$780/SF (like 775 Oriole sold)
-            // Each $100K invested adds approximately $25-35/SF value
-            // Diminishing returns above $1.5M
-            const basePSF = 780;
-            const renoK = renoAmount / 1000;
+            // Sanctuary-specific $/SF benchmarks based on actual market data:
+            // - As-is: $780/SF (775 Oriole Circle sold Dec 2025)
+            // - Minor ($250K): $875/SF (refreshed, shows well)
+            // - Mid-range ($950K): $1,050/SF (approaching modernized tier)
+            // - Major ($2.2M): $1,225/SF (competitive with 4698 Sanctuary at $1,452)
+            // - Full luxury ($2.5M+): $1,400/SF (matching 4698 Sanctuary asking)
+            // Key benchmark: 4698 Sanctuary Lane asking $1,452/SF (8,230 SF, 70' WF, 1989, modernized)
 
-            if (renoAmount === 0) return basePSF;
-            if (renoAmount <= 500000) {
-                // Minor reno: higher marginal return ($50/SF per $100K)
-                return basePSF + (renoK / 100) * 50;
-            } else if (renoAmount <= 1000000) {
-                // Mid-range: moderate return
-                return basePSF + 250 + ((renoK - 500) / 100) * 40;
-            } else if (renoAmount <= 1500000) {
-                // Upper mid: diminishing return
-                return basePSF + 450 + ((renoK - 1000) / 100) * 30;
-            } else {
-                // Major: significant diminishing returns
-                return basePSF + 600 + ((renoK - 1500) / 100) * 20;
+            // Interpolation points: [reno amount, target $/SF]
+            const benchmarks = [
+                [0, 780],           // As-is baseline
+                [250000, 875],      // Minor refresh
+                [500000, 950],      // Light-mid
+                [950000, 1050],     // Mid-range
+                [1500000, 1175],    // Upper-mid
+                [2200000, 1275],    // Major renovation
+                [2500000, 1400]     // Full luxury (approaching 4698's $1,452)
+            ];
+
+            // Find the two benchmarks to interpolate between
+            for (let i = 0; i < benchmarks.length - 1; i++) {
+                if (renoAmount <= benchmarks[i + 1][0]) {
+                    const [reno1, psf1] = benchmarks[i];
+                    const [reno2, psf2] = benchmarks[i + 1];
+                    const ratio = (renoAmount - reno1) / (reno2 - reno1);
+                    return psf1 + (psf2 - psf1) * ratio;
+                }
             }
+            // Above max benchmark
+            return 1400 + ((renoAmount - 2500000) / 100000) * 10; // Diminishing returns above $2.5M
         }
 
         function getMarketPosition(targetPrice) {
@@ -2545,14 +2641,17 @@
 
             // Update advantage text
             const advantageEl = document.getElementById('advantageText');
+            const psfValue = Math.round(projPSF);
             if (targetPrice < 8000000) {
-                advantageEl.textContent = 'Your waterfront access gives you an edge over non-waterfront competitors at this price point.';
+                advantageEl.textContent = `At $${psfValue}/SF, you're priced below 4698 Sanctuary Lane ($1,452/SF asking). Your 70' waterfront gives you an edge over non-waterfront listings at this tier.`;
+            } else if (targetPrice < 10000000) {
+                advantageEl.textContent = `KEY OPPORTUNITY: You fill the $8M-$12M gap with NO direct competition. At $${psfValue}/SF vs 4698's $1,452/SF, buyers get more house (8,561 vs 8,230 SF) for less per foot.`;
             } else if (targetPrice < 12000000) {
-                advantageEl.textContent = 'Larger than 4698 Sanctuary Lane (8,230 SF vs 8,561 SF) with same waterfront access. Compelling value proposition.';
+                advantageEl.textContent = `STRONG POSITION: At $${psfValue}/SF, you're competitive with 4698 Sanctuary Lane ($1,452/SF). Your advantages: larger (8,561 vs 8,230 SF), newer building (2001 vs 1989), same 70' waterfront.`;
             } else if (targetPrice < 17000000) {
-                advantageEl.textContent = 'Competing with 2015 builds. Renovation must deliver truly modern finishes to justify this price.';
+                advantageEl.textContent = `PREMIUM TIER: At $${psfValue}/SF, you're competing with 701 Sanctuary Drive ($2,200/SF, 2015 build). Renovation must deliver truly contemporary finishes to justify this positioning.`;
             } else {
-                advantageEl.textContent = 'Warning: Entering new construction territory. Very difficult to achieve without ground-up rebuild.';
+                advantageEl.textContent = `CAUTION: At $${psfValue}/SF, you're approaching new construction territory ($2,256-$2,418/SF). Very difficult to achieve without ground-up rebuild.`;
             }
         }
 
